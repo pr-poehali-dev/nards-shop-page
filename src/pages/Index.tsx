@@ -52,28 +52,16 @@ export default function Index() {
 
   const deliveryOptions = [
     {
-      region: 'Москва и МО',
-      time: '1-2 дня',
-      cost: 'Бесплатно',
-      icon: 'MapPin',
-    },
-    {
-      region: 'Санкт-Петербург',
-      time: '2-3 дня',
-      cost: '500 ₽',
-      icon: 'Building2',
-    },
-    {
-      region: 'Регионы России',
+      company: 'СДЭК',
       time: '3-7 дней',
-      cost: 'От 1000 ₽',
+      description: 'Быстрая доставка по всей России',
       icon: 'Truck',
     },
     {
-      region: 'Международная',
+      company: 'Почта России',
       time: '7-14 дней',
-      cost: 'По тарифам',
-      icon: 'Globe',
+      description: 'Надёжная доставка в любой населённый пункт',
+      icon: 'Package',
     },
   ];
 
@@ -249,12 +237,11 @@ export default function Index() {
               <span className="text-2xl">⚜️</span>
             </div>
             <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
-              Бережно упакуем и доставим нарды в любую точку мира. Работаем с проверенными
-              транспортными компаниями.
+              Доставка осуществляется по всей России через СДЭК и Почту России. Стоимость доставки рассчитывается индивидуально.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {deliveryOptions.map((option, index) => (
               <Card
                 key={index}
@@ -263,15 +250,13 @@ export default function Index() {
               >
                 <CardHeader>
                   <Icon name={option.icon} size={48} className="mx-auto text-primary mb-4" />
-                  <CardTitle className="text-lg">{option.region}</CardTitle>
+                  <CardTitle className="text-2xl">{option.company}</CardTitle>
+                  <CardDescription className="text-base">{option.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                      <Icon name="Clock" size={16} />
-                      <span>{option.time}</span>
-                    </div>
-                    <div className="text-xl font-bold text-primary">{option.cost}</div>
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                    <Icon name="Clock" size={18} />
+                    <span className="text-lg">{option.time}</span>
                   </div>
                 </CardContent>
               </Card>

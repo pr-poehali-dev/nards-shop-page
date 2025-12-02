@@ -346,7 +346,7 @@ export default function Index() {
                     <div>
                       <p className="font-semibold">Адрес</p>
                       <p className="text-muted-foreground">
-                        Москва, ул. Мастеровая, д. 15
+                        Волгоградская область, г. Камышин
                       </p>
                     </div>
                   </CardContent>
